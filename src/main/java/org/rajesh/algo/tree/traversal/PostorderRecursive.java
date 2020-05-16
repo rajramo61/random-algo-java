@@ -6,11 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Left, Root, Right
- */
-public class InorderRecursive {
-    List<Integer> inOrder(Node root) {
+public class PostorderRecursive {
+    List<Integer> postOrder(Node root) {
         final ArrayList<Integer> output = new ArrayList<>();
         traverse(root, output);
         return output;
@@ -19,8 +16,8 @@ public class InorderRecursive {
     void traverse(Node node, List<Integer> output) {
         if (Objects.nonNull(node)) {
             traverse(node.left, output);
-            output.add(node.data);
             traverse(node.right, output);
+            output.add(node.data);
         }
     }
 }

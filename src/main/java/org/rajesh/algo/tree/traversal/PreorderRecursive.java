@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Left, Root, Right
+ * Root, Left, Right
  */
-public class InorderRecursive {
-    List<Integer> inOrder(Node root) {
+public class PreorderRecursive {
+    List<Integer> preOrder(Node root) {
         final ArrayList<Integer> output = new ArrayList<>();
         traverse(root, output);
         return output;
@@ -18,8 +18,8 @@ public class InorderRecursive {
 
     void traverse(Node node, List<Integer> output) {
         if (Objects.nonNull(node)) {
-            traverse(node.left, output);
             output.add(node.data);
+            traverse(node.left, output);
             traverse(node.right, output);
         }
     }
