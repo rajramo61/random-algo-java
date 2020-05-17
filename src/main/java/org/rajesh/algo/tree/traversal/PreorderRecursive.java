@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class PreorderRecursive {
     List<Integer> preOrder(Node root) {
-        final ArrayList<Integer> output = new ArrayList<>();
+        final List<Integer> output = new ArrayList<>();
         traverse(root, output);
         return output;
     }
