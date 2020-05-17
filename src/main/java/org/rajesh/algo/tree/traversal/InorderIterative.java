@@ -24,7 +24,8 @@ public class InorderIterative {
                 root = root.left;
             } else {
                 if (stack.isEmpty()) break;
-                output.add(stack.pop().data);
+                root = stack.pop();
+                output.add(root.data);
                 root = root.right;
             }
         }
